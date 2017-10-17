@@ -46,5 +46,10 @@ class Plugin_Canary_Widget {
 
 		// Use the template to render widget output.
 		require_once( 'widget.php' );
+
+		// Clean up.
+		$plugin_data = null;
+		$update_data = null;
+
 	}
 }
