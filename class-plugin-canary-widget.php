@@ -22,10 +22,10 @@ class Plugin_Canary_Widget {
 	 * Hook to wp_dashboard_setup to add the widget.
 	 */
 	public static function init() {
-		if ( current_user_can( 'add_users' ) ) {
+		if ( current_user_can( 'activate_plugins' ) ) {
 			wp_add_dashboard_widget(
 				self::WID, // A unique slug/ID
-				'Plugin update canary', // Visible name for the widget.
+				'Plugin canary', // Visible name for the widget.
 				array( 'mitlib\Plugin_Canary_Widget', 'widget' )  // Callback for the main widget content.
 			);
 		}
@@ -40,6 +40,7 @@ class Plugin_Canary_Widget {
 
 		// Get available update data from site transient.
 		$update_data = get_site_transient( 'update_plugins' );
+
 		if ( false === $update_data ) {
 			$update_data = 'No update data available.';
 		}

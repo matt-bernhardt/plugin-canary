@@ -10,16 +10,21 @@
 
 <style type="text/css">
 .canary {
-	color: #fff;
 	padding: 5px;
 	margin: 0;
+	color: #000;
 }
+
 .canary a {
-	color: #fff;
+	color: #000;
+}
+#dashboard-widgets .canary a:hover,
+#dashboard-widgets .canary a:focus {
+	text-decoration: underline;
 }
 
 .listed {
-	background-color: #5cb85c;
+	background-color: #5CB85C;
 }
 
 .updated {
